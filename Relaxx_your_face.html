@@ -101,6 +101,7 @@
 				fill-opacity : .9;
 			}
 
+<<<<<<< HEAD
 			/* 对 input 框进行修饰 */
 			input[type=text] {
    				width: 66.5%;
@@ -114,6 +115,8 @@
 				text-align: center;
 }
 
+=======
+>>>>>>> b9558cf079802c212431924eae0cc88092a9ba38
 		/* 初始化 */
 		</style>
 		<script>
@@ -148,10 +151,16 @@
 		
 		<!-- the whole page  -->
 		<div id="content">
+<<<<<<< HEAD
 			<h2 id="name">Relaxx your face !</h2>
 
 			<!-- here is a command line !! -->
 			<input type="text" id="command" value="Are you ready?" size="50" readonly >
+=======
+			<h2>Relaxx your face !</h2>
+			<!-- here is a command line !! -->
+			<input type="text" id="command" value="Are you ready?" size="50" readonly>
+>>>>>>> b9558cf079802c212431924eae0cc88092a9ba38
 
 			<!-- The middle part -->
 			<div id="container">
@@ -247,7 +256,11 @@
 				} else {
 					alert("This applicaiton depends on getUserMedia, which your browser does not seem to support. :(");
 				}
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> b9558cf079802c212431924eae0cc88092a9ba38
 				// vid is videoel, the middle part
 				vid.addEventListener('canplay', enablestart, false);
 
@@ -279,6 +292,7 @@
 					trackingStarted = true;
 					// start loop to draw face
 					drawLoop();
+<<<<<<< HEAD
 					setCommandValue("System is loading ...");
 					var t2 = setTimeout("setCommandValue('Now, follow my order')",4000);
 					var t2 = setTimeout("setCommandValue('Show your happy to endless work')",7000);
@@ -308,15 +322,26 @@
 				var angry    = 	false;
 
 				// draw the face and detect emotion 
+=======
+					text.value = "After a long time work, you should feel ...";
+				}
+
+				// draw the face and detect emotion
+>>>>>>> b9558cf079802c212431924eae0cc88092a9ba38
 				function drawLoop() {
 					// 动画效果
 					requestAnimFrame(drawLoop);
 					overlayCC.clearRect(0, 0, vid_width, vid_height);
+<<<<<<< HEAD
+=======
+
+>>>>>>> b9558cf079802c212431924eae0cc88092a9ba38
 					if (ctrack.getCurrentPosition()) {
 						ctrack.draw(overlay);
 					}
 					var cp = ctrack.getCurrentParameters();
 					var er = ec.meanPredict(cp);
+<<<<<<< HEAD
 					detectEmtion(er);
 				}
 
@@ -325,6 +350,15 @@
 					if (er) {
 						updateData(er);
 						for (var i = 0;i < er.length;i++) {
+=======
+
+					// detetct emotion
+					if (er) {
+						updateData(er);
+						for (var i = 0;i < er.length;i++) {
+
+
+>>>>>>> b9558cf079802c212431924eae0cc88092a9ba38
 							// 检测 emotion
 							if (er[i].value > 0.4) {
 								document.getElementById('icon'+(i+1)).style.visibility = 'visible';
@@ -338,6 +372,8 @@
 							else {
 								document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
 							}
+
+
 						}
 					}
 				}
